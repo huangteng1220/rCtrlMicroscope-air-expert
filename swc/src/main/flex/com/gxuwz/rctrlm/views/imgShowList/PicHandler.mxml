@@ -4,8 +4,8 @@
 -->
 <s:Panel
         xmlns:fx="http://ns.adobe.com/mxml/2009"
-        xmlns:mx="library://ns.adobe.com/flex/mx"
         xmlns:s="library://ns.adobe.com/flex/spark"
+        height="100%"
         title="图像处理">
 
     <fx:Script><![CDATA[
@@ -46,20 +46,14 @@
 
 
   <s:layout>
-    <s:VerticalLayout />
+    <s:VerticalLayout paddingLeft="5" />
   </s:layout>
 
-  <s:HGroup width="100%"  verticalAlign="middle">
+
     <s:Button id="takePhoto" label="拍照" click="takePhoto_clickHandler(event)"/>
     <s:Button id="edit_bt" label="编辑" click="edit_bt_clickHandler(event)"/>
-  </s:HGroup>
-
-  <s:HGroup width="100%"  verticalAlign="middle">
     <s:Button id="merge_bt" label="融合" click="merge_bt_clickHandler(event)"/>
-  </s:HGroup>
+    <s:Button id="exitButton" label="结束" click="exitButton_clickHandler(event)"/>
 
-  <s:HGroup width="100%"  verticalAlign="middle">
-    <s:Button id="exitButton" label="退出图像处理" click="exitButton_clickHandler(event)"/>
-  </s:HGroup>
 
 </s:Panel>

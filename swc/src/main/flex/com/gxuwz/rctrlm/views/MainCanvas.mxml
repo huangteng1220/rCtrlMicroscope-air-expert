@@ -178,10 +178,10 @@
     <mx:VDividedBox width="100%" height="100%">
         <videoCtrl:ImgVideoCtrl id="imgVideoCtrl"
                                 width="100%" height="100%"
-                                enabled="false"
                                 netConnection="{netConn}"
                                 remoteUser="{_remoteUser}"
                                 playOff="{_playOff}"/>
+        <!--enabled="false"-->
     </mx:VDividedBox>
 
 </s:VGroup>

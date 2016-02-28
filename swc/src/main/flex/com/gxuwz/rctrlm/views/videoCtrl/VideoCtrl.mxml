@@ -11,6 +11,9 @@
     import com.gxuwz.rctrlm.views.videoCtrl.mangerGesture.MGesture;
     import mx.controls.Label;
     import mx.events.FlexEvent;
+
+    import spark.components.Alert;
+
     //动作
     private var gesture:MGesture;				//Instance of MGesture class we've written
     private var gestureMag:Number;			//Magnitude of current gesture made
@@ -28,14 +31,23 @@
     [Bindable] private var _netStream:NetStream;
     [Bindable] private var _netConnection:NetConnection;
     [Bindable] private var _remoteUser:String;
+
     public function get netConnection():NetConnection {
       return _netConnection;
     }
 
     public function set netConnection(value:NetConnection):void {
       _netConnection = value;
-      //_netStream=new NetStream(_netConnection);
     }
+
+    public function get netStream():NetStream {
+        return _netStream;
+    }
+
+    public function set netStream(value:NetStream):void {
+        _netStream = value;
+    }
+
     public function get remoteUser():String {
       return _remoteUser;
     }
@@ -55,6 +67,7 @@
 
 
     protected function mouseDownHandler(event:MouseEvent):void {
+      trace(" here in VideoCtrl line 57");
       lineMSG = new Object();
       //add some extra data to ensure every sent object is unique
       lineMSG.id = new Date().time;
@@ -73,23 +86,28 @@
       initLine();
       drawLineUI.graphics.moveTo(startPoint.lineStartPoint.x, startPoint.lineStartPoint.y);
       trace("startDrawingLine:" + startPoint.lineStartPoint.x + ", " + startPoint.lineStartPoint.y);
-
     }
 
     private function onMouseMove(e:MouseEvent):void {
-
-      if (e.buttonDown) {
+      if (e.buttonDown && _netConnection) {
+        trace(lineMSG+" in VideoCtrl line 82");
         var lineEndPoint:Point = new Point(this.mouseX, this.mouseY);
         lineMSG.lineEndPoint = lineEndPoint;
+
         mouseMoveDirection(lineMSG);
         onDrawingLine(lineMSG);
+        if(_netStream){
+            lineMSG.lineText=lineLabel.text;
+            _netStream.send("onDrawingLine",lineMSG);
+        }
       } else {
+       _netStream.send("onCleanUI");
         drawLineUI.graphics.clear();
       }
     }
 
     public function onDrawingLine(drawingPoint:Object):void {
-      trace(drawingPoint + "  in VideoCtrl.mxml's  onDrawingLine");
+//      trace(drawingPoint + "  in VideoCtrl.mxml's  onDrawingLine");
       drawLineUI.graphics.clear();//当鼠标移动，擦除上次画的线，重新画线
       initLine();  //初始化线条颜色
       drawLineUI.graphics.moveTo(drawingPoint.lineStartPoint.x, drawingPoint.lineStartPoint.y);
@@ -123,15 +141,15 @@
     }
 
     private function onMouseUp(e:MouseEvent):void {
-      if (cmdString){
-//        _netConnection.call("sendMsg", null, _remoteUser, event._msg);
-        _netConnection.call("sendCommand",null,cmdString,_remoteUser);
+      if (cmdString && _netConnection){
+          _netConnection.call("sendCommand",null,cmdString,_remoteUser);
       }
 
       cmdString = null;
       lineLabel.text = "";
 
       drawLineUI.graphics.clear();
+     _netStream.send("onCleanUI");
       trace("on vdDisplay onMouseUp  ");
       this.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
       this.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);

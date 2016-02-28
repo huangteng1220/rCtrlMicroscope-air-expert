@@ -267,13 +267,14 @@
     </fx:Script>
 
 
-    <s:HGroup width="100%" height="80%">
-
+    <s:HGroup width="100%" height="75%">
+    <!--video show play-->
     <videoContext:VideoCtrl id="vdCtrl"
-                            width="75%" height="100%"
+                            width="80%" height="100%"
                             remoteUser="{_remoteUser}"
+                            netStream="{outStream}"
                             netConnection="{_netConnection}"/>
-
+    <!--device control-->
    <s:Panel width="25%" height="100%" cornerRadius="5" title="显微镜控制">
 
        <s:layout>
@@ -287,29 +288,32 @@
 
   </s:HGroup>
 
- <s:HGroup width="100%" height="20%">
+    <!--image show and chat panel-->
+    <s:HGroup width="100%" height="20%">
 
-         <img:ImageBox id="imgShwList"
+        <s:VGroup  width="40%" height="100%">
+            <s:HGroup width="100%" height="100%">
+                <s:TextArea width="100%" id="msgArea" height="100%" />
+            </s:HGroup>
+
+            <sendPanel:SendPanel
+                    width="100%" id="sendPanel"
+                    sendMessageEvent="sendMessageEventHandler(event)"/>
+        </s:VGroup>
+
+
+
+        <img:ImageBox id="imgShwList"
                        width="100%" height="100%"
                        cornerRadius="5"/>
          <img:PicHandler id="picHandler"
                          cornerRadius="5"
+                         width="80"
+                         height="100%"
                          editorPicEvent="edit_bt_clickHandler()"
                          exitPicEvent="exit_bt_clickHandler()"
                          mergePicEvent="merge_bt_clickHandler()"
                          takePicEvent="picHandler_takePicEventHandler()"/>
-
-     <!--对话面板-->
-     <s:VGroup  width="40%" height="100%">
-         <s:HGroup width="100%" height="100%">
-             <s:TextArea width="100%" id="msgArea" height="100%" />
-         </s:HGroup>
-
-         <sendPanel:SendPanel
-                 width="100%" id="sendPanel"
-                 sendMessageEvent="sendMessageEventHandler(event)"/>
-     </s:VGroup>
-
  </s:HGroup>
   <!--<mx:HDividedBox width="100%" height="25%">-->
 

@@ -21,10 +21,9 @@
     <fx:Metadata>
         [Event(name="sendMessageEvent",type="com.gxuwz.rctrlm.events.SendPanelEvent")]
     </fx:Metadata>
-
-  <s:TextInput id="say" width="50%" enter="onSend()"/>
+<s:Label text="说：" fontSize="16"/>
+  <s:TextInput id="say" width="100%" enter="onSend()"/>
   <s:Button label="发送"  click="onSend()"/>
   <s:Button label="清除"  click="{say.text=''}"/>
-
 
 </s:HGroup>
