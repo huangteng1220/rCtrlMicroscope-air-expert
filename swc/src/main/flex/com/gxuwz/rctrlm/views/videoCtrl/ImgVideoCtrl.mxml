@@ -7,6 +7,7 @@
                 xmlns:videoContext="com.gxuwz.rctrlm.views.videoCtrl.*"
                 xmlns:img="com.gxuwz.rctrlm.views.imgShowList.*"
                 xmlns:command="com.gxuwz.rctrlm.views.command.*"
+                height="100%"
                 xmlns:mx="library://ns.adobe.com/flex/mx"
                 xmlns:sendPanel="com.gxuwz.rctrlm.views.chat.*"
                 creationComplete="creationCompleteHandler()">
@@ -38,6 +39,7 @@
         [Bindable] private var _playOff:Boolean;
         [Bindable] private var _connected:String = "UnConnected";
         [Bindable] private var _remoteUser:String;
+        [Bindable] private var  _mic:Microphone;
 
         public function get netConnection():NetConnection {
             return _netConnection;
@@ -219,8 +221,8 @@
         private function playNetStream():void {
             try {
 
-                var mic:Microphone = Microphone.getEnhancedMicrophone();
-                mic.gain=50;
+                _mic = Microphone.getEnhancedMicrophone();
+//                mic.gain=50;
 
                 inStream=new NetStream(_netConnection);
                 inStream.client=new Services();
@@ -233,7 +235,7 @@
 
                 outStream = new NetStream(_netConnection);
                 outStream.client=new Services();
-                outStream.attachAudio(mic);
+                outStream.attachAudio(_mic);
                 outStream.publish("media-sound");
 
             } catch (e:ErrorEvent) {
@@ -267,7 +269,7 @@
     </fx:Script>
 
 
-    <s:HGroup width="100%" height="75%">
+    <s:HGroup width="100%" height="100%">
     <!--video show play-->
     <videoContext:VideoCtrl id="vdCtrl"
                             width="80%" height="100%"
@@ -285,6 +287,7 @@
            <s:VerticalLayout paddingLeft="2" paddingBottom="2" paddingTop="2" paddingRight="2"/>
        </s:layout>
        <command:Command width="100%" height="100%"
+                        mic="{_mic}"
                         remoteUser="{_remoteUser}"
                         netConnection="{_netConnection}"/>
 
@@ -319,41 +322,4 @@
                          mergePicEvent="merge_bt_clickHandler()"
                          takePicEvent="picHandler_takePicEventHandler()"/>
  </s:HGroup>
-  <!--<mx:HDividedBox width="100%" height="25%">-->
-
-      <!--<img:ImageBox id="imgShwList"-->
-                    <!--width="75%" height="100%"/>-->
-
-      <!--<img:PicHandler id="picHandler"-->
-                      <!--cornerRadius="5"-->
-                      <!--width="25%" height="100%"-->
-                      <!--editorPicEvent="edit_bt_clickHandler()"-->
-                      <!--exitPicEvent="exit_bt_clickHandler()"-->
-                      <!--mergePicEvent="merge_bt_clickHandler()"-->
-                      <!--takePicEvent="picHandler_takePicEventHandler()"/>-->
-
-  <!--</mx:HDividedBox>-->
-
-    <!--&lt;!&ndash;对话面板&ndash;&gt;-->
-    <!--<s:VGroup  width="40%" height="100%">-->
-        <!--<s:HGroup width="100%" height="100%">-->
-
-            <!--<s:TextArea width="100%" id="msgArea" height="100%" />-->
-
-            <!--&lt;!&ndash;<s:Panel width="25%" height="100%"&ndash;&gt;-->
-            <!--&lt;!&ndash;cornerRadius="5">&ndash;&gt;-->
-            <!--&lt;!&ndash;<s:layout>&ndash;&gt;-->
-            <!--&lt;!&ndash;<s:VerticalLayout paddingBottom="5" paddingRight="5" paddingTop="5" paddingLeft="5"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;</s:layout>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<s:Label text="当前连接状态  :  {_connected}"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;<s:Label text="当前连接用户  :  {_remoteUser}"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;</s:Panel>&ndash;&gt;-->
-
-        <!--</s:HGroup>-->
-
-        <!--<sendPanel:SendPanel-->
-                <!--width="100%" id="sendPanel"-->
-                <!--sendMessageEvent="sendMessageEventHandler(event)"/>-->
-    <!--</s:VGroup>-->
 </s:VGroup>

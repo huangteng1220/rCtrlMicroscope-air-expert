@@ -59,6 +59,29 @@
         [Bindable] private var _remoteUser:String;
         [Bindable] private var _netConnection:NetConnection;
 
+
+        [Bindable]
+        private var _mic:Microphone;
+//        [Bindable]
+//        private var _h264Settings:H264VideoStreamSettings;
+
+
+        public function get mic():Microphone {
+            return _mic;
+        }
+
+        public function set mic(value:Microphone):void {
+            _mic = value;
+        }
+
+//        public function get h264Settings():H264VideoStreamSettings {
+//            return _h264Settings;
+//        }
+//
+//        public function set h264Settings(value:H264VideoStreamSettings):void {
+//            _h264Settings = value;
+//        }
+
         public function get netConnection():NetConnection {
             return _netConnection;
         }
@@ -179,7 +202,7 @@
 
         protected function spot_light_bar_add_clickHandler(event:MouseEvent):void {
             var str:String;
-            spot_light_add = spot_light_add - light_bar_vslider.value;
+            spot_light_add = spot_light_add + light_bar_vslider.value;//2016-03-01 由原来的-变为+
             if (spot_light_add <= 0) {
                 spot_light_add = 0;
             }
@@ -203,7 +226,7 @@
         //聚光镜光栏小
         protected function spot_light_bar_sub_clickHandler(event:MouseEvent):void {
             var str:String;
-            spot_light_add = spot_light_add + light_bar_vslider.value;
+            spot_light_add = spot_light_add - light_bar_vslider.value;//2016-03-01 由原来的+变为-
             if (spot_light_add >= 180) {
                 spot_light_add = 180;
             }

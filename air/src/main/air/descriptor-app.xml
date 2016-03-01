@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
     Flexmojos is a set of maven goals to allow maven users to compile,
@@ -38,7 +38,7 @@
 	<id>expert-main</id>
 
 	<!-- Used as the filename for the application. Required. -->
-	<filename>expert-main</filename>
+	<filename>远程显微镜专家端</filename>
 
 	<!-- The name that is displayed in the AIR application installer. Optional. -->
 	<name>expert-main</name>
