@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!--
+  Created by Administrator on 2016/2/29.
+-->
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         width="100%"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         chromeColor="#B0BDC4"
+          padding="2">
+
+    <fx:Script><![CDATA[
+        import mx.collections.ArrayList;
+
+
+        [Bindable]
+        private var listVideoCodec:ArrayList =
+                new ArrayList(["H264 Baseline", "H264 Main", "Sorenson"]);
+
+        [Bindable]
+        private var listAudioCodec:ArrayList = new ArrayList(["NellyMoser", "Speex", "Off"]);
+        [Bindable]
+        private var listEchoCancellation:ArrayList =
+                new ArrayList(["Normal", "Headphones", "Usb Device", "Off", "Basic Micro"]);
+
+        [Bindable]
+        private var _mic:Microphone;
+//        [Bindable]
+//        private var _h264Settings:H264VideoStreamSettings;
+
+
+        public function get mic():Microphone {
+            return _mic;
+        }
+
+        public function set mic(value:Microphone):void {
+            _mic = value;
+        }
+
+//        public function get h264Settings():H264VideoStreamSettings {
+//            return _h264Settings;
+//        }
+//
+//        public function set h264Settings(value:H264VideoStreamSettings):void {
+//            _h264Settings = value;
+//        }
+
+
+        private function onEchoChanged():void {
+            if (comboAudioCodec.selectedLabel == "Off") {
+                _mic = null;
+            } else if(_mic) {
+                if (echoCancellation.selectedItem == "Basic Micro") {
+                    _mic.setUseEchoSuppression(cbEchoSuppression.selected);
+                } else if (Microphone.getEnhancedMicrophone()) {
+                    var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
+                    switch (echoCancellation.selectedItem) {
+                        case "Normal":
+                            options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
+                            break;
+                        case "Headphones":
+                            options.mode = MicrophoneEnhancedMode.HEADSET;
+                            break;
+                        case "Usb Device":
+                            options.mode = MicrophoneEnhancedMode.HALF_DUPLEX;
+                            break;
+                        case "Off":
+                            options.mode = MicrophoneEnhancedMode.OFF;
+                            break;
+                    }
+                    options.echoPath = (cbEchoPath.selected) ? 256 : 128;
+                    _mic.enhancedOptions = options;
+                } else
+                    trace(" nothing in TransferSettingPanel");
+
+                if (!_mic) {
+                    return;
+                }
+
+                _mic.codec = comboAudioCodec.selectedLabel;
+            }
+        }
+
+
+
+        private function onSilenceChange():void {
+            //设置声音跳步
+            if(_mic){
+                _mic.setSilenceLevel(silenceLevel.value);
+            }
+        }
+
+        private function onNoiseChange():void {
+            //设置声音压缩
+            if(_mic){
+                _mic.noiseSuppressionLevel = -noiseSuppression.value;
+            }
+
+        }
+        ]]></fx:Script>
+
+    <mx:HRule width="100%"  chromeColor="#2d1eff"/>
+
+    <s:BorderContainer width="100%" cornerRadius="6">
+        <s:layout>
+            <s:VerticalLayout padding="3"/>
+        </s:layout>
+
+        <s:Label text="音频传输设置" backgroundColor="#ffb009" fontSize="15"/>
+
+        <s:HGroup width="100%" verticalAlign="middle">
+            <s:Label text="编码:"/>
+            <mx:ComboBox id="comboAudioCodec"
+                         dataProvider="{listAudioCodec}"
+                         change="onEchoChanged()"/>
+        </s:HGroup>
+
+        <s:HGroup width="100%"  verticalAlign="middle">
+            <mx:Label text="回声消除类型:"/>
+            <mx:ComboBox id="echoCancellation" dataProvider="{listEchoCancellation}" change="onEchoChanged();"/>
+        </s:HGroup>
+
+        <s:HGroup width="100%" verticalAlign="middle">
+            <s:Label text="静音级别:"/>
+            <s:NumericStepper id="silenceLevel"
+                              minimum="0" maximum="100"
+                              cornerRadius="5"
+                              height="20"
+                              change="onSilenceChange()"
+                              value="10"/>
+            <s:Label text="噪音抑制:"  />
+            <s:NumericStepper id="noiseSuppression"
+                              change="onNoiseChange()"
+                              cornerRadius="5"
+                              height="20"
+                              minimum="0" maximum="100"
+                              value="30"/>
+        </s:HGroup>
+
+         <s:HGroup width="100%"  verticalAlign="middle">
+            <s:CheckBox selected="false"
+                        label="增强音频"
+                        change="onEchoChanged()"
+                        id="cbEchoPath"/>
+            <s:CheckBox selected="false"
+                        label="回音抑制"
+                        change="onEchoChanged()"
+                        id="cbEchoSuppression"/>
+        </s:HGroup>
+
+
+    </s:BorderContainer>
+
+    </s:VGroup>
+
+
