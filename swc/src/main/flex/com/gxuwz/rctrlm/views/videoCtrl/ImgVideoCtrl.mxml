@@ -275,7 +275,11 @@
                             netStream="{outStream}"
                             netConnection="{_netConnection}"/>
     <!--device control-->
-   <s:Panel width="25%" height="100%" cornerRadius="5" title="显微镜控制">
+   <s:Panel width="25%" height="100%"
+            cornerRadius="6"
+            chromeColor="#B0BDC4"
+            dropShadowVisible="true"
+            title="显微镜控制" >
 
        <s:layout>
            <s:VerticalLayout paddingLeft="2" paddingBottom="2" paddingTop="2" paddingRight="2"/>

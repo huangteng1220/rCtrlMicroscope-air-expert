@@ -314,7 +314,6 @@
     <s:Button label="中断呼叫" click="onDisconnect()"/>
   </s:HGroup>
 
-  <s:Button id="chat" includeIn="CallEstablished" label="交流" click="chat_clickHandler(event)"/>
   <!--<s:Label includeIn="CallEstablished" text="质量调整"/>-->
   <!--<s:HSlider id="videoQualitySlider"-->
              <!--includeIn="CallEstablished"-->

@@ -180,8 +180,9 @@
                                 width="100%" height="100%"
                                 netConnection="{netConn}"
                                 remoteUser="{_remoteUser}"
+                                enabled="false"
                                 playOff="{_playOff}"/>
-        <!--enabled="false"-->
+
     </mx:VDividedBox>
 
 </s:VGroup>
