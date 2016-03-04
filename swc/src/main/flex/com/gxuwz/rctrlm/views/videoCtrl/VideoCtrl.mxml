@@ -8,7 +8,9 @@
 
   <fx:Script>
     <![CDATA[
-    import com.gxuwz.rctrlm.views.videoCtrl.mangerGesture.MGesture;
+      import com.gxuwz.rctrlm.events.DrawingLineFromExpertEvent;
+      import com.gxuwz.rctrlm.events.EventDispatcherFactory;
+      import com.gxuwz.rctrlm.views.videoCtrl.mangerGesture.MGesture;
     import mx.controls.Label;
     import mx.events.FlexEvent;
 
@@ -62,21 +64,48 @@
       lineLabel = new Label();
       this.addElement(lineLabel);
       _camera = Camera.getCamera() as Camera;
+
+
+        EventDispatcherFactory.getEventDispatcher()
+                .addEventListener(DrawingLineFromExpertEvent.DRAWING_LINE_FROM_EXPERT,
+                drawingLineFromExpert);
+        EventDispatcherFactory.getEventDispatcher()
+                .addEventListener(DrawingLineFromExpertEvent.CLEAN_DRAWING_LINE_FROM_EXPERT,
+                clearnDrawingLineFromExpert);
     }
+      private function initStart():void{
+          lineMSG = new Object();
+          //add some extra data to ensure every sent object is unique
+          lineMSG.id = new Date().time;
+          gesture.start();
+      }
 
+      private function drawingLineFromExpert(e:DrawingLineFromExpertEvent):void{
+          trace(e.data +" from Service Class which get from Expert");
+//          gesture.start();
+          initStart();
+          startDrawingLine(e.data);
+          mouseMoveDirection(e.data);
+          onDrawingLine(e.data);
+      }
 
+      private function clearnDrawingLineFromExpert(e:DrawingLineFromExpertEvent):void{
+          drawLineUI.graphics.clear();
+          lineLabel.text = "";
+      }
 
     protected function mouseDownHandler(event:MouseEvent):void {
       trace(" here in VideoCtrl line 57");
-      lineMSG = new Object();
+//      lineMSG = new Object();
       //add some extra data to ensure every sent object is unique
-      lineMSG.id = new Date().time;
+//      lineMSG.id = new Date().time;
       //var lineStartPoint:Point=new Point(e.localX, e.localY);
+
+        initStart();
       var lineStartPoint:Point = new Point(this.mouseX, this.mouseY);
       lineMSG.lineStartPoint = lineStartPoint;
-
       startDrawingLine(lineMSG);
-      gesture.start();
+//      gesture.start();
 
       this.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove, false, 0, true);
       this.addEventListener(MouseEvent.MOUSE_UP, onMouseUp, false, 0, true);
@@ -97,7 +126,7 @@
         mouseMoveDirection(lineMSG);
         onDrawingLine(lineMSG);
         if(_netStream){
-            lineMSG.lineText=lineLabel.text;
+//            lineMSG.lineText=lineLabel.text;
             _netStream.send("onDrawingLine",lineMSG);
         }
       } else {

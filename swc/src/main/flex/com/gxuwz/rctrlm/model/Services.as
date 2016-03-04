@@ -47,6 +47,16 @@ public class Services {
 //        discussion.text += prompt + message + "\n";
         trace(prompt +";d "+ message+"dsdd");
     }
+    public function onDrawingLine(obj:Object):void{
+        trace(obj.lineStartPoint.x+" in Server from Server line 75");
+        var e:DrawingLineFromExpertEvent =new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.DRAWING_LINE_FROM_EXPERT);
+        e.data=obj;
+        EventDispatcherFactory.getEventDispatcher().dispatchEvent(e);
+    }
 
+    public function onCleanUI():void{
+        var e:DrawingLineFromExpertEvent=new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.CLEAN_DRAWING_LINE_FROM_EXPERT);
+        EventDispatcherFactory.getEventDispatcher().dispatchEvent(e);
+    }
 }
 }

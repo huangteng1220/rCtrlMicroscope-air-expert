@@ -271,27 +271,29 @@
 
     <s:HGroup width="100%" height="100%">
     <!--video show play-->
-    <videoContext:VideoCtrl id="vdCtrl"
+        <s:Panel width="25%" height="100%"
+                 cornerRadius="6"
+                 chromeColor="#B0BDC4"
+                 dropShadowVisible="true"
+                 title="显微镜控制" >
+
+            <s:layout>
+                <s:VerticalLayout paddingLeft="2" paddingBottom="2" paddingTop="2" paddingRight="2"/>
+            </s:layout>
+            <command:Command width="100%" height="100%"
+                             mic="{_mic}"
+                             remoteUser="{_remoteUser}"
+                             netConnection="{_netConnection}"/>
+
+        </s:Panel>
+
+
+        <videoContext:VideoCtrl id="vdCtrl"
                             width="80%" height="100%"
                             remoteUser="{_remoteUser}"
                             netStream="{outStream}"
                             netConnection="{_netConnection}"/>
     <!--device control-->
-   <s:Panel width="25%" height="100%"
-            cornerRadius="6"
-            chromeColor="#B0BDC4"
-            dropShadowVisible="true"
-            title="显微镜控制" >
-
-       <s:layout>
-           <s:VerticalLayout paddingLeft="2" paddingBottom="2" paddingTop="2" paddingRight="2"/>
-       </s:layout>
-       <command:Command width="100%" height="100%"
-                        mic="{_mic}"
-                        remoteUser="{_remoteUser}"
-                        netConnection="{_netConnection}"/>
-
-   </s:Panel>
 
   </s:HGroup>
 
