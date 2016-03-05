@@ -217,6 +217,7 @@
                                 width="100%" height="100%"
                                 netConnection="{netConn}"
                                 remoteUser="{_remoteUser}"
+                                localUser="{csBar.userNameInput.text}"
                                 enabled="false"
                                 playOff="{_playOff}"/>
 

@@ -40,7 +40,14 @@
         [Bindable] private var _connected:String = "UnConnected";
         [Bindable] private var _remoteUser:String;
         [Bindable] private var  _mic:Microphone;
+        [Bindable] private var _localUser:String;
+        public function get localUser():String {
+            return _localUser;
+        }
 
+        public function set localUser(value:String):void {
+            _localUser = value;
+        }
         public function get netConnection():NetConnection {
             return _netConnection;
         }
@@ -226,7 +233,7 @@
 
                 inStream=new NetStream(_netConnection);
                 inStream.client=new Services();
-                inStream.play("media-call"); //play the video
+                inStream.play(_remoteUser+"Media-call"); //play the video
                 var video:Video = new Video();
                 video.width = vdCtrl.localVdCam_vd.width;
                 video.height = vdCtrl.localVdCam_vd.height;
@@ -236,7 +243,7 @@
                 outStream = new NetStream(_netConnection);
                 outStream.client=new Services();
                 outStream.attachAudio(_mic);
-                outStream.publish("media-sound");
+                outStream.publish(_localUser+"Media-sound");
 
             } catch (e:ErrorEvent) {
                 Alert.show("打开耳麦或者接收视频出错!");
