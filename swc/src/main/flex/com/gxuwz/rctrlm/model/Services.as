@@ -14,7 +14,7 @@ public class Services {
     //定义几个公共变量。供外部程序访问
 
     [Bindable] public var _msg:String="";
-    [Bindable] public var _remoteUser:String="";
+    [Bindable] public var localuser:String;
 
     public function onRelay(action:String,user:String):void{
 
@@ -47,11 +47,13 @@ public class Services {
 //        discussion.text += prompt + message + "\n";
         trace(prompt +";d "+ message+"dsdd");
     }
-    public function onDrawingLine(obj:Object):void{
-        trace(obj.lineStartPoint.x+" in Server from Server line 75");
-        var e:DrawingLineFromExpertEvent =new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.DRAWING_LINE_FROM_EXPERT);
-        e.data=obj;
-        EventDispatcherFactory.getEventDispatcher().dispatchEvent(e);
+    public function onDrawingLine(obj:Object,user:String):void{
+        if(localuser==user){
+            trace(obj.lineStartPoint.x+" in Server from Server line 75");
+            var e:DrawingLineFromExpertEvent =new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.DRAWING_LINE_FROM_EXPERT);
+            e.data=obj;
+            EventDispatcherFactory.getEventDispatcher().dispatchEvent(e);
+        }
     }
 
     public function onCleanUI():void{

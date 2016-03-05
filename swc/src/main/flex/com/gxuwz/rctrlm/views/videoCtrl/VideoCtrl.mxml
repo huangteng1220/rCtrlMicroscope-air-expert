@@ -127,10 +127,10 @@
         onDrawingLine(lineMSG);
         if(_netStream){
 //            lineMSG.lineText=lineLabel.text;
-            _netStream.send("onDrawingLine",lineMSG);
+            _netStream.send("onDrawingLine",lineMSG,_remoteUser);
         }
       } else {
-       _netStream.send("onCleanUI");
+       _netStream.send("onCleanUI",_remoteUser);
         drawLineUI.graphics.clear();
       }
     }
@@ -178,7 +178,7 @@
       lineLabel.text = "";
 
       drawLineUI.graphics.clear();
-     _netStream.send("onCleanUI");
+     _netStream.send("onCleanUI",_remoteUser);
       trace("on vdDisplay onMouseUp  ");
       this.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
       this.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
