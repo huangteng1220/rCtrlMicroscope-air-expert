@@ -282,7 +282,6 @@
               label.CallRinging="断开连接"
               label.LoginConnected="断开连接"/>
 
-      <chat:Chat  remoteUser="{_remoteUser}" netConnection="{_netConnection}"/>
   </s:HGroup>
 
   <!--Login Disconnecting pane -->

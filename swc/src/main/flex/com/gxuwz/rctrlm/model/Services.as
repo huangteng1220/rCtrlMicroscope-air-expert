@@ -14,7 +14,7 @@ public class Services {
     //定义几个公共变量。供外部程序访问
 
     [Bindable] public var _msg:String="";
-    [Bindable] public var localuser:String;
+    [Bindable] public static var localuser:String;
 
     public function onRelay(action:String,user:String):void{
 

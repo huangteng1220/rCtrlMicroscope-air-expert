@@ -33,6 +33,7 @@
     [Bindable] private var _netStream:NetStream;
     [Bindable] private var _netConnection:NetConnection;
     [Bindable] private var _remoteUser:String;
+    [Bindable]private var drawingFromExpertBoolean:Boolean=false;
 
     public function get netConnection():NetConnection {
       return _netConnection;
@@ -63,7 +64,7 @@
       gesture = new MGesture(this);	//Initiate MGesture for gesture detection
       lineLabel = new Label();
       this.addElement(lineLabel);
-      _camera = Camera.getCamera() as Camera;
+//      _camera = Camera.getCamera() as Camera;
 
 
         EventDispatcherFactory.getEventDispatcher()
@@ -83,6 +84,8 @@
       private function drawingLineFromExpert(e:DrawingLineFromExpertEvent):void{
           trace(e.data +" from Service Class which get from Expert");
 //          gesture.start();
+          drawingFromExpertBoolean=true;
+          gesture.startFromExpert(e.data.lineStartPoint.x,e.data.lineStartPoint.y);
           startDrawingLine(e.data);
           mouseMoveDirection(e.data);
           onDrawingLine(e.data);
@@ -203,9 +206,26 @@
     }
 
     private function mouseMoveDirection(lineMSG:Object):void {
-      gestureMag = gesture.update().getMagnitude() / 2;
-      gestureMag = Math.min(gestureMag, maxMag);
-      direction = gesture.evalDirections();
+
+
+        /**
+         * if drawingFromExpertBoolean==false //which mean that drawing the line on local
+         *  gestureMag = gesture.update().getMagnitude() / 2;
+         * else
+         *  gestureMag=gesture.updateFromExpert(lineMSG.lineEndPoint.x,lineMSG.lineEndPoint.y).getMagnitude()/2; //we drawing from expert
+         */
+        if(drawingFromExpertBoolean){
+            gestureMag=gesture.updateFromExpert(lineMSG.lineEndPoint.x,lineMSG.lineEndPoint.y).getMagnitude()/2;
+        }else{
+            gestureMag = gesture.update().getMagnitude() / 2;
+        }
+        gestureMag = Math.min(gestureMag, maxMag);
+        if(drawingFromExpertBoolean){
+            direction=gesture.evalDirectionsFromExpert(lineMSG.lineEndPoint.x,lineMSG.lineEndPoint.y);
+        } else{
+            direction = gesture.evalDirections();
+        }
+
       switch (direction) {
         case 0:
           cmdString = "$0MD400000000" + getMoveDistance(direction, lineMSG) + "!";
