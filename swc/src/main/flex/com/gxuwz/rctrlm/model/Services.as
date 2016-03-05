@@ -48,6 +48,7 @@ public class Services {
         trace(prompt +";d "+ message+"dsdd");
     }
     public function onDrawingLine(obj:Object,user:String):void{
+        trace(user+"....and local user --"+localuser);
         if(localuser==user){
             trace(obj.lineStartPoint.x+" in Server from Server line 75");
             var e:DrawingLineFromExpertEvent =new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.DRAWING_LINE_FROM_EXPERT);
@@ -56,9 +57,12 @@ public class Services {
         }
     }
 
-    public function onCleanUI():void{
-        var e:DrawingLineFromExpertEvent=new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.CLEAN_DRAWING_LINE_FROM_EXPERT);
-        EventDispatcherFactory.getEventDispatcher().dispatchEvent(e);
+    public function onCleanUI(user:String):void{
+        if(localuser==user){
+            var e:DrawingLineFromExpertEvent=new DrawingLineFromExpertEvent(DrawingLineFromExpertEvent.CLEAN_DRAWING_LINE_FROM_EXPERT);
+            EventDispatcherFactory.getEventDispatcher().dispatchEvent(e);
+        }
+
     }
 }
 }
