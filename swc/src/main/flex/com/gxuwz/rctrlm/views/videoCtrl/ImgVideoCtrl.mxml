@@ -317,11 +317,15 @@
                     sendMessageEvent="sendMessageEventHandler(event)"/>
         </s:VGroup>
 
+        <s:BorderContainer width="100%" height="100%" cornerRadius="5">
+            <s:Scroller width="100%" height="100%">
+                <img:ImageBox id="imgShwList" width="100%" height="100%"  />
+            </s:Scroller>
+        </s:BorderContainer>
 
-
-        <img:ImageBox id="imgShwList"
-                       width="100%" height="100%"
-                       cornerRadius="5"/>
+        <!--<img:ImageBox id="imgShwList"-->
+                       <!--width="100%" height="100%"-->
+                       <!--cornerRadius="5"/>-->
          <img:PicHandler id="picHandler"
                          cornerRadius="5"
                          width="80"

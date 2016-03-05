@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="562c4714-6e78-42e2-b7df-92e0d424f7e7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/imgShowList/ImageBox.mxml" afterPath="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/imgShowList/ImageBox.mxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/ImgVideoCtrl.mxml" afterPath="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/ImgVideoCtrl.mxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainCanvas.mxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainCanvas.mxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/MainCanvas.mxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="101.96429">
+            <state vertical-scroll-proportion="-0.6401099">
               <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
               <folding>
                 <marker date="1457189502070" expanded="false" signature="586:993" placeholder="..." />
@@ -93,61 +94,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImgVideoCtrl.mxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImgVideoCtrl.mxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/ImgVideoCtrl.mxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2394737">
-              <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
+            <state vertical-scroll-proportion="-6.642857">
+              <caret line="328" column="40" selection-start-line="328" selection-start-column="40" selection-end-line="328" selection-end-column="40" />
               <folding>
-                <marker date="1457190982835" expanded="true" signature="632:971" placeholder="..." />
-                <marker date="1457190982835" expanded="true" signature="981:1028" placeholder="/** 调用融合图片主程序的exe所需的全局变量 ...*/" />
-                <marker date="1457190982835" expanded="true" signature="1687:1729" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="1788:1831" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="1890:1936" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2006:2053" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2101:2141" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2199:2460" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2265:2347" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2372:2450" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2510:2553" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2613:2657" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2714:2903" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="2976:3033" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="3098:3903" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="3224:3288" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="3317:3371" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="3913:3955" placeholder="/**点击删除按钮删除位图。 ...*/" />
-                <marker date="1457190982835" expanded="true" signature="4011:5100" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="4127:4993" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="4395:4979" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="4999:5090" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="5159:5859" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="5290:5356" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="5408:5527" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="5578:5849" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="5924:6421" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6054:6121" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6173:6239" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6291:6410" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6476:6582" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6639:6761" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6818:7128" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="6932:7092" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="7186:7567" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="7371:7531" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="7621:8454" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="8206:8314" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="8331:8444" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="8363:8430" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="8464:8495" placeholder="/** 视频播放 ...*/" />
-                <marker date="1457190982835" expanded="true" signature="8542:9459" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="8560:9366" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="9388:9448" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="9469:9528" placeholder="/**...*/" />
-                <marker date="1457190982835" expanded="true" signature="9605:9933" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="10012:10310" placeholder="{...}" />
-                <marker date="1457190982835" expanded="true" signature="10320:10391" placeholder="/**...*/" />
+                <marker date="1457192521930" expanded="true" signature="632:971" placeholder="..." />
+                <marker date="1457192521930" expanded="true" signature="981:1028" placeholder="/** 调用融合图片主程序的exe所需的全局变量 ...*/" />
+                <marker date="1457192521930" expanded="true" signature="1687:1729" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="1788:1831" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="1890:1936" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2006:2053" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2101:2141" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2199:2460" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2265:2347" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2372:2450" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2510:2553" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2613:2657" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2714:2903" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="2976:3033" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="3098:3903" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="3224:3288" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="3317:3371" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="3913:3955" placeholder="/**点击删除按钮删除位图。 ...*/" />
+                <marker date="1457192521930" expanded="true" signature="4011:5100" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="4127:4993" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="4395:4979" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="4999:5090" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="5159:5859" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="5290:5356" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="5408:5527" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="5578:5849" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="5924:6421" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6054:6121" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6173:6239" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6291:6410" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6476:6582" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6639:6761" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6818:7128" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="6932:7092" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="7186:7567" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="7371:7531" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="7621:8454" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="8206:8314" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="8331:8444" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="8363:8430" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="8464:8495" placeholder="/** 视频播放 ...*/" />
+                <marker date="1457192521930" expanded="true" signature="8542:9459" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="8560:9366" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="9388:9448" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="9469:9528" placeholder="/**...*/" />
+                <marker date="1457192521930" expanded="true" signature="9605:9933" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="10012:10310" placeholder="{...}" />
+                <marker date="1457192521930" expanded="true" signature="10320:10391" placeholder="/**...*/" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageBox.mxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/imgShowList/ImageBox.mxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.428571">
+              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,6 +294,7 @@
         <option value="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/MainCanvas.mxml" />
         <option value="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/VideoCtrl.mxml" />
         <option value="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/ImgVideoCtrl.mxml" />
+        <option value="$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/imgShowList/ImageBox.mxml" />
       </list>
     </option>
   </component>
@@ -341,10 +353,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="22" />
+    <option name="y" value="2" />
+    <option name="width" value="1208" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -426,6 +438,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="flex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rCtrlMicroscope-air" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rCtrlMicroscope-air-expert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="air" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -818,7 +844,7 @@
       <workItem from="1457108060824" duration="2399000" />
       <workItem from="1457144032987" duration="7417000" />
       <workItem from="1457174616821" duration="605000" />
-      <workItem from="1457185217761" duration="6065000" />
+      <workItem from="1457185217761" duration="8314000" />
     </task>
     <task id="LOCAL-00001" summary="第一次修改重复代码">
       <created>1455633592030</created>
@@ -904,14 +930,20 @@
       <option name="project" value="LOCAL" />
       <updated>1457190267170</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="时间：2016-03-05 21：55&#10;完成：界面小调整">
+      <created>1457191338842</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1457191338842</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138686000" />
+    <option name="totallyTimeSpent" value="140935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="22" y="2" width="1208" height="728" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -920,12 +952,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24011713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2751678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33764136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31181103" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31987077" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22620791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2592282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -991,7 +1023,8 @@
     <MESSAGE value="时间：2016-03-05 11:10&#10;完成：画线问题" />
     <MESSAGE value="时间：2016-03-05 21：55&#10;完成：画线显示" />
     <MESSAGE value="时间：2016-03-05 21：55&#10;完成：用户下线时提示对方" />
-    <option name="LAST_COMMIT_MESSAGE" value="时间：2016-03-05 21：55&#10;完成：用户下线时提示对方" />
+    <MESSAGE value="时间：2016-03-05 21：55&#10;完成：界面小调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="时间：2016-03-05 21：55&#10;完成：界面小调整" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1703,9 +1736,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/imgShowList/ImageBox.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/ImgVideoCtrl.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.642857">
+          <caret line="328" column="40" selection-start-line="328" selection-start-column="40" selection-end-line="328" selection-end-column="40" />
+          <folding>
+            <marker date="1457192521930" expanded="true" signature="632:971" placeholder="..." />
+            <marker date="1457192521930" expanded="true" signature="981:1028" placeholder="/** 调用融合图片主程序的exe所需的全局变量 ...*/" />
+            <marker date="1457192521930" expanded="true" signature="1687:1729" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="1788:1831" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="1890:1936" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2006:2053" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2101:2141" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2199:2460" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2265:2347" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2372:2450" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2510:2553" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2613:2657" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2714:2903" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="2976:3033" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="3098:3903" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="3224:3288" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="3317:3371" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="3913:3955" placeholder="/**点击删除按钮删除位图。 ...*/" />
+            <marker date="1457192521930" expanded="true" signature="4011:5100" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="4127:4993" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="4395:4979" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="4999:5090" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="5159:5859" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="5290:5356" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="5408:5527" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="5578:5849" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="5924:6421" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6054:6121" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6173:6239" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6291:6410" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6476:6582" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6639:6761" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6818:7128" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="6932:7092" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="7186:7567" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="7371:7531" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="7621:8454" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="8206:8314" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="8331:8444" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="8363:8430" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="8464:8495" placeholder="/** 视频播放 ...*/" />
+            <marker date="1457192521930" expanded="true" signature="8542:9459" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="8560:9366" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="9388:9448" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="9469:9528" placeholder="/**...*/" />
+            <marker date="1457192521930" expanded="true" signature="9605:9933" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="10012:10310" placeholder="{...}" />
+            <marker date="1457192521930" expanded="true" signature="10320:10391" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/MainCanvas.mxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="101.96429">
+        <state vertical-scroll-proportion="-0.6401099">
           <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
           <folding>
             <marker date="1457189502070" expanded="false" signature="586:993" placeholder="..." />
@@ -1748,63 +1846,6 @@
             <marker date="1457189502070" expanded="true" signature="7710:7872" placeholder="{...}" />
             <marker date="1457189502070" expanded="true" signature="7945:7995" placeholder="/** ...*/" />
             <marker date="1457189502070" expanded="true" signature="8081:8322" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swc/src/main/flex/com/gxuwz/rctrlm/views/videoCtrl/ImgVideoCtrl.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2394737">
-          <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
-          <folding>
-            <marker date="1457190982835" expanded="true" signature="632:971" placeholder="..." />
-            <marker date="1457190982835" expanded="true" signature="981:1028" placeholder="/** 调用融合图片主程序的exe所需的全局变量 ...*/" />
-            <marker date="1457190982835" expanded="true" signature="1687:1729" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="1788:1831" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="1890:1936" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2006:2053" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2101:2141" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2199:2460" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2265:2347" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2372:2450" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2510:2553" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2613:2657" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2714:2903" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="2976:3033" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="3098:3903" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="3224:3288" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="3317:3371" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="3913:3955" placeholder="/**点击删除按钮删除位图。 ...*/" />
-            <marker date="1457190982835" expanded="true" signature="4011:5100" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="4127:4993" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="4395:4979" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="4999:5090" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="5159:5859" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="5290:5356" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="5408:5527" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="5578:5849" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="5924:6421" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6054:6121" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6173:6239" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6291:6410" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6476:6582" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6639:6761" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6818:7128" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="6932:7092" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="7186:7567" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="7371:7531" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="7621:8454" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="8206:8314" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="8331:8444" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="8363:8430" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="8464:8495" placeholder="/** 视频播放 ...*/" />
-            <marker date="1457190982835" expanded="true" signature="8542:9459" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="8560:9366" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="9388:9448" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="9469:9528" placeholder="/**...*/" />
-            <marker date="1457190982835" expanded="true" signature="9605:9933" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="10012:10310" placeholder="{...}" />
-            <marker date="1457190982835" expanded="true" signature="10320:10391" placeholder="/**...*/" />
           </folding>
         </state>
       </provider>
