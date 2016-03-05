@@ -18,7 +18,6 @@
         import com.gxuwz.rctrlm.events.EventDispatcherFactory;
         import com.gxuwz.rctrlm.events.SendPanelEvent;
         import com.gxuwz.rctrlm.model.Services;
-        import com.gxuwz.rctrlm.utils.WriteToText;
         import com.gxuwz.rctrlm.views.imgShowList.ImageShow;
 
         import mx.controls.Alert;
@@ -61,7 +60,6 @@
         }
 
         public function set playOff(value:Boolean):void {
-            WriteToText.writeToTxtLog("介绍视频流和发布音频流");
             _playOff = value;
             if (_playOff == true) {
                 //play netStream;
@@ -228,6 +226,7 @@
         private function playNetStream():void {
             try {
 
+                vdCtrl.enabled=true;
                 _mic = Microphone.getEnhancedMicrophone();
 //                mic.gain=50;
 
@@ -296,6 +295,7 @@
 
 
         <videoContext:VideoCtrl id="vdCtrl"
+                            enabled="false"
                             width="80%" height="100%"
                             remoteUser="{_remoteUser}"
                             netStream="{outStream}"

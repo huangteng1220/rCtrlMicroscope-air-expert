@@ -56,6 +56,11 @@
             userList = new ArrayCollection();
         }
 
+        public function closeApplicationEventHandler():void{
+            if(netConn){
+                netConn.call("callUser", null, _remoteUser, "Disconnect");
+            }
+        }
 
         /**
          * reply the remote caller
@@ -73,6 +78,7 @@
                 _playOff = false;
                 csBar.ringerChooseBool = false;
             } else if (evt.action == "Disconnect") {
+                Alert.show("对方已经下线");
                 _playOff = false;
                 netConn.close();
                 netConn = null;

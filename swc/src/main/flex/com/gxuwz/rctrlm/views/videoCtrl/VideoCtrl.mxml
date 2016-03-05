@@ -127,12 +127,14 @@
 
         mouseMoveDirection(lineMSG);
         onDrawingLine(lineMSG);
-        if(_netStream){
+        if(_remoteUser && _netStream){
 //            lineMSG.lineText=lineLabel.text;
             _netStream.send("onDrawingLine",lineMSG,_remoteUser);
         }
-      } else {
-       _netStream.send("onCleanUI",_remoteUser);
+      } else{
+          if(_remoteUser){
+              _netStream.send("onCleanUI",_remoteUser);
+          }
         drawLineUI.graphics.clear();
       }
     }
@@ -172,7 +174,8 @@
     }
 
     private function onMouseUp(e:MouseEvent):void {
-      if (cmdString && _netConnection){
+
+      if (cmdString && _netConnection  && _remoteUser){
           _netConnection.call("sendCommand",null,cmdString,_remoteUser);
       }
 
@@ -180,7 +183,10 @@
       lineLabel.text = "";
 
       drawLineUI.graphics.clear();
-     _netStream.send("onCleanUI",_remoteUser);
+      if(_remoteUser){
+          _netStream.send("onCleanUI",_remoteUser);
+      }
+
       trace("on vdDisplay onMouseUp  ");
       this.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
       this.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
