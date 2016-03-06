@@ -206,9 +206,11 @@
    */
   private function onCancel():void {
     // dispatchEvent(new Event("onCancelEvent"));
-    var event:ConServerBarEvent = new ConServerBarEvent(ConServerBarEvent.TRY_CANCEL_CALLUSER_EVENT);//尝试断开远程连接
-    //event.data=calleeInput.text;
-    EventDispatcherFactory.getEventDispatcher().dispatchEvent(event);
+//    var event:ConServerBarEvent = new ConServerBarEvent(ConServerBarEvent.TRY_CANCEL_CALLUSER_EVENT);//尝试断开远程连接
+//    //event.data=calleeInput.text;
+//    EventDispatcherFactory.getEventDispatcher().dispatchEvent(event);
+    dispatchEvent(new MouseEvent("CancelToControlEvent"));
+
   }
 
   private function videoQualityChanged(e:Event = null):void {
@@ -233,6 +235,7 @@
 
   <fx:Metadata>
     [Event(name="ConnectToServerEvent", type="flash.events.MouseEvent")]
+    [Event(name="CancelToControlEvent", type="flash.events.MouseEvent")]
     [Event(name="DisconnectToServerEvent", type="flash.events.MouseEvent")]
   </fx:Metadata>
 
@@ -255,7 +258,7 @@
     <s:Label  text="用户名"  toolTip="请输入用户名"/>
     <s:TextInput id="userNameInput" width="160" text="Expert" enter="{userNameInput.text.length > 0?onConnect():setFocus()}"/>
     <s:Button label="连接"  id="conButton" click="onConnect()" enabled="{userNameInput.text.length > 0}"/>
-    <s:Button label="断开服务" click="onDisconnect()" />
+    <!--<s:Button label="断开服务" click="onDisconnect()" />-->
   </s:HGroup>
 
   <!-- Login Connecting pane -->
@@ -304,7 +307,7 @@
   <!--Call Established pane -->
   <s:HGroup includeIn="CallEstablished" verticalAlign="middle">
     <s:Label text="Called  {calleeInput.text}"  />
-    <s:Button label="中断呼叫" click="onDisconnect()"/>
+    <s:Button label="终止会话" click="onCancel()"/>
     <s:Label id="callTimerText" width="25"/>
   </s:HGroup>
 

@@ -38,8 +38,8 @@
 	<id>expert-main</id>
 
 	<!-- Used as the filename for the application. Required. -->
-	<filename>远程显微镜专家端</filename>
-
+	<!--<filename>远程显微镜专家端</filename>-->
+	<filename>RCtrlMicroscopeExpert</filename>
 	<!-- The name that is displayed in the AIR application installer. Optional. -->
 	<name>远程显微镜专家端</name>
 

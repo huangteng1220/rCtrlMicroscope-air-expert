@@ -61,11 +61,20 @@
 
         public function set playOff(value:Boolean):void {
             _playOff = value;
+            trace(_playOff+" in ImgVideoCtrl line 64");
             if (_playOff == true) {
+                vdCtrl.enabled=true;
+                chatPanel.enabled=true;
+                comPanel.enabled=true;
                 //play netStream;
                 playNetStream();
             } else if(_playOff==false){
+                vdCtrl.enabled=false;
+                chatPanel.enabled=false;
+                comPanel.enabled=false;
+                inStream.close();
                 inStream=null;
+                outStream.close();
                 outStream=null;
             }
         }
@@ -225,8 +234,7 @@
          */
         private function playNetStream():void {
             try {
-
-                vdCtrl.enabled=true;
+                trace(" paly stream on line 235 in ImgVideoCtrl");
                 _mic = Microphone.getEnhancedMicrophone();
 //                mic.gain=50;
 
@@ -263,11 +271,18 @@
 
 
         private function sendMessageEventHandler(event:SendPanelEvent):void {
-            _netConnection.call("sendMsg", null, _remoteUser, event._msg);
-            msgArea.text += "我 :  " + event._msg + "\n";
-            sendPanel.say.text = "";
-            msgArea.scroller.verticalScrollBar.value=msgArea
-                    .scroller.verticalScrollBar.maximum;
+
+            if(_netConnection && _remoteUser ){
+                _netConnection.call("sendMsg", null, _remoteUser, event._msg);
+                msgArea.text += "我 :  " + event._msg + "\n";
+                sendPanel.say.text = "";
+                msgArea.scroller.verticalScrollBar.value=msgArea
+                        .scroller.verticalScrollBar.maximum;
+            }else{
+                Alert.show("请检查服务连接\n" +
+                        "(1.连接网络服务\n" +
+                        "2.与远程用户连接)。","提示");
+            }
         }
 
         /*********************    对话            ******************************/
@@ -278,6 +293,8 @@
     <s:HGroup width="100%" height="100%">
     <!--video show play-->
         <s:Panel width="25%" height="100%"
+                 id="comPanel"
+                 enabled="false"
                  cornerRadius="6"
                  chromeColor="#B0BDC4"
                  dropShadowVisible="true"
@@ -307,7 +324,7 @@
     <!--image show and chat panel-->
     <s:HGroup width="100%" height="25%">
 
-        <s:VGroup  width="40%" height="100%">
+        <s:VGroup  width="40%" height="100%" id="chatPanel" enabled="false">
             <s:HGroup width="100%" height="100%">
                 <s:TextArea width="100%" id="msgArea" height="100%" />
             </s:HGroup>
