@@ -132,7 +132,7 @@
             _netStream.send("onDrawingLine",lineMSG,_remoteUser);
         }
       } else{
-          if(_remoteUser){
+          if(_remoteUser && _netStream){
               _netStream.send("onCleanUI",_remoteUser);
           }
         drawLineUI.graphics.clear();
@@ -183,7 +183,7 @@
       lineLabel.text = "";
 
       drawLineUI.graphics.clear();
-      if(_remoteUser){
+      if(_remoteUser && _netStream){
           _netStream.send("onCleanUI",_remoteUser);
       }
 
@@ -274,7 +274,6 @@
     }
     ]]>
   </fx:Script>
-
 
     <mx:VideoDisplay id="localVdCam_vd"
                      x="0" y="0"

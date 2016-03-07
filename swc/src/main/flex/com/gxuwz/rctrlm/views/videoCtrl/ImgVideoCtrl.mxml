@@ -22,6 +22,7 @@
 
         import mx.controls.Alert;
         import mx.core.SoundAsset;
+        import mx.graphics.ImageSnapshot;
 
         /**
          * 调用融合图片主程序的exe所需的全局变量
@@ -32,7 +33,7 @@
         private var soundClass:Class;
 
         [Bindable] private var outStream:NetStream;
-
+        [Bindable] public var vidContainer : Sprite ;//目的是为解决拍照安全纱箱问题
         [Bindable] private var inStream:NetStream;
         [Bindable] private var _netConnection:NetConnection;
         [Bindable] private var _playOff:Boolean;
@@ -40,6 +41,7 @@
         [Bindable] private var _remoteUser:String;
         [Bindable] private var  _mic:Microphone;
         [Bindable] private var _localUser:String;
+        [Bindable] private var _videoGlobal:Video;
         public function get localUser():String {
             return _localUser;
         }
@@ -62,20 +64,28 @@
         public function set playOff(value:Boolean):void {
             _playOff = value;
             trace(_playOff+" in ImgVideoCtrl line 64");
-            if (_playOff == true) {
+            if (_playOff) {
                 vdCtrl.enabled=true;
                 chatPanel.enabled=true;
                 comPanel.enabled=true;
                 //play netStream;
                 playNetStream();
-            } else if(_playOff==false){
+            } else if(!_playOff){
                 vdCtrl.enabled=false;
                 chatPanel.enabled=false;
                 comPanel.enabled=false;
-                inStream.close();
-                inStream=null;
-                outStream.close();
-                outStream=null;
+                if(_videoGlobal){
+                    vdCtrl.localVdCam_vd.removeChild(_videoGlobal);
+                }
+                if(inStream){
+                    inStream.close();
+                    inStream=null;
+                }
+                if(outStream){
+                    outStream.publish(null);
+                    outStream.close();
+                    outStream=null;
+                }
             }
         }
 
@@ -97,13 +107,30 @@
         }
 
         private function picHandler_takePicEventHandler():void {
-
-            var bmpd:BitmapData = new BitmapData(vdCtrl.localVdCam_vd.width, vdCtrl.localVdCam_vd.height);
+            var bmpd:BitmapData;
+//            var bmpd:BitmapData = new BitmapData(vdCtrl.localVdCam_vd.width, vdCtrl.localVdCam_vd.height);
             try {
-                bmpd.draw(vdCtrl.localVdCam_vd);
+                if(_videoGlobal){
+//                    vdCtrl.localVdCam_vd.addChild(_videoGlobal);
+                     bmpd = ImageSnapshot.captureBitmapData(vdCtrl.localVdCam_vd);
+                }
             }
             catch (e:Error) {
-                Alert.show("安全沙箱出错!");
+//                trace(e.toString());
+//                vidContainer=new Sprite();
+//                var vector:Vector.<IGraphicsData> = vidContainer.graphics.readGraphicsData();
+//                var len:int = vector.length;
+                trace("安全沙箱出错");
+//                这里调试发现，vector里存放了三种类型
+//                0 type---> [object GraphicsBitmapFill]
+//                1 type---> [object GraphicsPath]
+//                2 type---> [object GraphicsEndFill]
+//                for(var i:int = 0; i < len; i++)
+//                {
+//                    trace(i, "type--->", vector[i]);
+//                }
+//
+//                bmpd = GraphicsBitmapFill(vector[0]).bitmapData;
             }
 
             var imgShow:ImageShow = new ImageShow();  //取得相片并保存
@@ -214,7 +241,7 @@
         private function msctrlEXE(number:int):void {
             var _processArgs:Vector.<String> = new Vector.<String>();
             var _nativeProcessStartupInfo:NativeProcessStartupInfo = new NativeProcessStartupInfo();
-            // _nativeProcessStartupInfo.executable = File.applicationDirectory.resolvePath("G:/projects/microscope/rCtrlMicroscope-air-expert/swc/src/main/resources/bin/MSCtrl.exe");
+//             _nativeProcessStartupInfo.executable = File.applicationDirectory.resolvePath("G:/projects/microscope/news/rCtrlMicroscope-air-expert/air/src/main/resources/bin/MSCtrl.exe");
             _nativeProcessStartupInfo.executable = File.applicationDirectory.resolvePath("bin/MSCtrl.exe");
             _processArgs.push(number);
             _nativeProcessStartupInfo.arguments = _processArgs;
@@ -225,6 +252,9 @@
             } catch (e:Error) {
                 if (_process) {
                     Alert.show("图片处理程序已经在运行!");
+//                    _process.exit(null);
+                    _process.exit(false);
+                    _process.start(_nativeProcessStartupInfo);
                 }
             }
         }
@@ -233,19 +263,25 @@
          * 视频播放
          */
         private function playNetStream():void {
+
+//            vidContainer=new Sprite();
             try {
-                trace(" paly stream on line 235 in ImgVideoCtrl");
+                _videoGlobal=new Video(vdCtrl.localVdCam_vd.width,vdCtrl.localVdCam_vd.height);
+//                _videoGlobal.attachNetStream(null);
+//                _videoGlobal.width=
+//                _videoGlobal.height = ;
+//                _videoGlobal=video;
+//                var video:Video = new Video();
+
                 _mic = Microphone.getEnhancedMicrophone();
 //                mic.gain=50;
 
                 inStream=new NetStream(_netConnection);
                 inStream.client=new Services();
                 inStream.play(_remoteUser+"Media-call"); //play the video
-                var video:Video = new Video();
-                video.width = vdCtrl.localVdCam_vd.width;
-                video.height = vdCtrl.localVdCam_vd.height;
-                video.attachNetStream(inStream);
-                vdCtrl.localVdCam_vd.addChild(video);
+
+                _videoGlobal.attachNetStream(inStream);
+                vdCtrl.localVdCam_vd.addChild(_videoGlobal);
 
                 outStream = new NetStream(_netConnection);
                 outStream.client=new Services();
@@ -257,6 +293,7 @@
             }
 
         }
+
 
         /*****************     对话面板      *************************/
 

@@ -91,10 +91,10 @@
 	</fx:Metadata>
 	<s:VGroup width="100%" height="100%" id="imgList">
 		<s:Image width="100%" height="100%" id="image"/>
-		<s:HGroup width="100%">
-			<s:Button id="delete_bt" width="35%" height="100%"  label="delete" click="delete_bt_clickHandler(event)"/>
-			<s:CheckBox width="30%" id="selected_chb" height="100%" label="选择" click="Transmission()"/>
-			<s:Button id="zoom_bt" width="35%" height="100%" label="zoom" click="zoom_bt_clickHandler(event)"/>
+		<s:HGroup >
+			<s:Button id="delete_bt" label="delete" click="delete_bt_clickHandler(event)"/>
+			<s:CheckBox  id="selected_chb" label="选择" click="Transmission()"/>
+			<s:Button id="zoom_bt"  label="zoom" click="zoom_bt_clickHandler(event)"/>
 		</s:HGroup>
 	</s:VGroup>
 </s:Group>

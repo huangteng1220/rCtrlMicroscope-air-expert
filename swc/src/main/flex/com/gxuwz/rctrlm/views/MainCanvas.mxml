@@ -101,6 +101,7 @@
                 csBar.ringerChooseBool = false;
                 if(_playOff){
                     _playOff = false;
+                    _playOff=true;
                 }else{
                     _playOff = true;
                 }
